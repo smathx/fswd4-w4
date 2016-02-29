@@ -6,6 +6,7 @@
 angular.module('conFusion.services', ['ngResource'])
 
 .constant("baseURL", "https://fswd4-mobile-smathx.c9users.io:8081/")
+//.constant("baseURL", "http://localhost:3000/")
 
 .factory('menuFactory', [
   '$resource', 'baseURL',
@@ -65,7 +66,7 @@ angular.module('conFusion.services', ['ngResource'])
     };
 
     favFac.getFavorites = function () {
-      favorites = $localStorage.getObject('favorites', []);
+      favorites = $localStorage.getObject('favorites', '[]');
       return favorites;
     };
 
